@@ -2,6 +2,8 @@ import { useState } from 'react'
 import './App.css'
 import Header from './Components/Header'
 import Category from './Components/category'
+import TopRestaurent from './Components/TopRestaurent'
+
 // import Category from './Components/Category'
 
 function App() {
@@ -11,6 +13,9 @@ function App() {
  <>
  <Header />
  <Category />
+
+ <TopRestaurent />
+
  </>
   )
 }
