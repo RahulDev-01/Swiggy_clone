@@ -41,9 +41,9 @@ const Start = () => {
 export default function Card(props) {
   return (
     <div className='w-[273px] shrink-0 grow'>
-      <div className='h-[182px] rounded-[15px] overflow-hidden relative'>
+      <div className=' group h-[182px] rounded-[15px] overflow-hidden relative'>
         <img
-          className='object-cover w-full h-full'
+          className=' group-hover:scale-110 duration-200 object-cover w-full h-full'
           src={'http://localhost:5000/images/' + props.image}
           alt=""
         />
@@ -60,7 +60,7 @@ export default function Card(props) {
           {props.minTime} - {props.maxTime} mins
         </span>
       </div>
-      <div>
+      <div className='text-slate-700'>
         {props.name}
         <br />
         {props.place}

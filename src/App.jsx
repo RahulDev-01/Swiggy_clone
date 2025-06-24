@@ -3,6 +3,7 @@ import './App.css'
 import Header from './Components/Header'
 import Category from './Components/category'
 import TopRestaurent from './Components/TopRestaurent'
+import OnlineDelivery from './Components/OnlineDelivery'
 
 // import Category from './Components/Category'
 
@@ -13,8 +14,8 @@ function App() {
  <>
  <Header />
  <Category />
-
  <TopRestaurent />
+ <OnlineDelivery />
 
  </>
   )

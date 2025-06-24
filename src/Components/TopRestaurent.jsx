@@ -66,6 +66,7 @@ function TopRestaurant() {
           </div>
         ))}
       </div>
+      <hr className="border-[1px] text-gray-200 max-w-[1180px] ml-[160px] my-[2px] mt-[20px]"/>
     </>
   );
 }
