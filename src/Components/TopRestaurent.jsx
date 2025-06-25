@@ -53,7 +53,7 @@ function TopRestaurant() {
         </div>
       </div>
 
-      <div className="flex max-w-[1200px] ml-[170px] mt-[20px] shrink-0 overflow-hidden gap-[30px]">
+      <div className="flex max-w-[1200px] ml-[170px] mt-[20px] shrink-0 overflow-hidden gap-[30px] cursor-pointer">
         {data.map((d, i) => (
           <div
             key={i}

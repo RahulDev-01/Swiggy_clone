@@ -42,7 +42,7 @@ function Category() {
       </div>
       {/* Respose to  fetch Section */}
 
-      <div className="flex ml-[140px]  max-w-[1180px] overflow-hidden  z-20">
+      <div className="flex ml-[140px]  max-w-[1180px] overflow-hidden  z-20 cursor-pointer">
         {categries.map((cat, index) => {
           return (
             <div

@@ -54,7 +54,7 @@ function Header() {
         style={{
           opacity: toggle ? 1 : 0,
           visibility: toggle ? "visible" : "hidden",
-          zIndex: toggle?10:-1
+          zIndex: toggle?102:-1
         }}
         onClick={hideSideMenu}
       >
@@ -66,7 +66,7 @@ function Header() {
           }}
         ></div>
       </div>
-      <header className="p-3 shadow-xl sticky top-0 z-[999] bg-white">
+      <header className="p-3 shadow-xl sticky top-0 z-[99] bg-white">
         <div className="max-w-[1200px] mx-auto  flex items-center ">
           <div className="w-[100px]  ">
             <img src="Images/logo.png" alt="" className="w-full" />
