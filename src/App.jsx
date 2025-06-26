@@ -4,6 +4,10 @@ import Header from './Components/Header'
 import Category from './Components/category'
 import TopRestaurent from './Components/TopRestaurent'
 import OnlineDelivery from './Components/OnlineDelivery'
+import Bestplaces from './Components/Bestplaces'
+import BestCuisines from './Components/BestCuisines'
+import ExploreRes from './Components/ExploreRes'
+
 
 // import Category from './Components/Category'
 
@@ -16,7 +20,9 @@ function App() {
  <Category />
  <TopRestaurent />
  <OnlineDelivery />
-
+<Bestplaces />
+<BestCuisines />
+<ExploreRes />
  </>
   )
 }
