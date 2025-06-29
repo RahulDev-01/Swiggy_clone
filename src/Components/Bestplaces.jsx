@@ -27,7 +27,7 @@ export default function Bestplaces() {
                 places.map((place,i)=>{
                     return(
                         <>
-                        <button className={`border border-gray-300 rounded-2xl p-3 w-[250px] ${place.name === "Show More" ? " text-orange-500" : ""} `}> {place.name} {place.icon}</button>
+                        <button className={`border border-gray-300 rounded-2xl p-3 w-[250px] cursor-pointer hover:text-orange-500  ${place.name === "Show More" ? " text-orange-500" : ""} `}> {place.name} {place.icon}</button>
                         </>
                         
                     )

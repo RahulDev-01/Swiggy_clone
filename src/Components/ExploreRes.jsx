@@ -17,7 +17,7 @@ export default function ExploreRes() {
                    places.map((place,i)=>{
                        return(
                            <>
-                           <button className={`border border-gray-300 rounded-2xl p-3 w-[250px] ${place.name === "Show More" ? " text-orange-500" : ""} `}> {place.name} {place.icon}</button>
+                           <button className={`border border-gray-300 rounded-2xl p-3 w-[250px] cursor-pointer hover:text-orange-500 ${place.name === "Show More" ? " text-orange-500" : ""} `}> {place.name} {place.icon}</button>
                            </>
                            
                        )
@@ -25,7 +25,7 @@ export default function ExploreRes() {
                }
            </div>
            </div>
-           <hr className='border mb-10 max-w-[1200px]  ml-[160px]'/>
+           <hr className='border  max-w-[1200px]  ml-[160px]'/>
        </>
      )
    }

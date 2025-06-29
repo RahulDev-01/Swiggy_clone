@@ -7,6 +7,7 @@ import OnlineDelivery from './Components/OnlineDelivery'
 import Bestplaces from './Components/Bestplaces'
 import BestCuisines from './Components/BestCuisines'
 import ExploreRes from './Components/ExploreRes'
+import Footer from './Components/Footer'
 
 
 // import Category from './Components/Category'
@@ -23,6 +24,7 @@ function App() {
 <Bestplaces />
 <BestCuisines />
 <ExploreRes />
+<Footer />
  </>
   )
 }
