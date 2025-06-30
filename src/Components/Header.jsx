@@ -67,9 +67,9 @@ function Header() {
             e.stopPropagation();
           }}
         >
-          <div className="mt-4 ml-[130px]  p-5 flex flex-col gap-5 max-w-[500px]">
+          <div className="mt-4 ml-[130px] mr-[20px] p-5 flex flex-col gap-5 max-w-[500px]">
             
-            <button className="mb-2 self-start">
+            <button className="mb-2 self-start cursor-pointer">
               
               <RxCross2 className="text-2xl" onClick={hideSideMenu} />
             </button>
