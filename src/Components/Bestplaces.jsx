@@ -1,40 +1,66 @@
-import React from 'react'
-import { FaAngleDown } from "react-icons/fa";
+import React, { useEffect, useState } from "react";
+import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 
-export default function Bestplaces() {
-    const places =[
-        {name:"Best Restaurants in Bangalore"},
-        {name:"Best Restaurants in Pune"},
-        {name:"Best Restaurants in Mumbai"},
-        {name:"Best Restaurants in Delhi"},
-        {name:"Best Restaurants in Hyderabad"},
-        {name:"Best Restaurants in Kolkata"},
-        {name:"Best Restaurants in Chennai"},
-        {name:"Best Restaurants in Chandigarh"},
-        {name:"Best Restaurants in Ahmedabad"},
-        {name:"Best Restaurants in jaipur"},
-        {name:"Best Restaurants in Nagpur"},
-        {name:"Show More", icon :<FaAngleDown className='inline'/>},
-    ]
+function Category() {
+  const [slide, setSlide] = useState(0);
+
+  const fetchCategory = async () => {
+    const response = await fetch("http://localhost:5000/categories");
+    const data = await response.json();
+    setCategory(data);
+  };
+
+  useEffect(() => {
+    fetchCategory();
+  }, []);
+
+  const [categries, setCategory] = useState([]);
+
+  const nextSlide = () => {
+    if (categries.length - 8 == slide) return false;
+    setSlide(slide + 3);
+  };
+
+  const prevSlide = () => {
+    if (slide == 0) return false;
+    setSlide(slide - 3);
+  };
+
   return (
     <>
-    <div className='m-10 max-w-[1200px] mx-auto px-4 mt-[15px]'>
-    <h2 className="font-bold text-[1.5em] mb-[10px]">
-          Restaurants with online food delivery in Hyderabad
-        </h2>
-        <div className='mt-10 grid grid-cols-4  max-w-[1200px] gap-5 text-[17px]  font-semibold '>
-            {
-                places.map((place,i)=>{
-                    return(
-                        <>
-                        <button className={`border border-gray-300 rounded-2xl p-3 w-[250px] cursor-pointer hover:text-orange-500  ${place.name === "Show More" ? " text-orange-500" : ""} `}> {place.name} {place.icon}</button>
-                        </>
-                        
-                    )
-                })
-            }
+      <div className="flex items-center w-full - mx-auto max-w-[1200px] mt-[15px] justify-between ">
+        <div className="font-bold text-[1.5em]">What's on your mind?</div>
+        <div className="flex  ">
+          <div className="w-[30px] h-[30px] bg-[#e2e2e7]  rounded-full m  flex items-center justify-center cursor-pointer ">
+            <FaArrowLeft onClick={prevSlide} />
+          </div>
+          <div className="w-[30px] h-[30px] bg-[#e2e2e7] rounded-full mx-2 flex items-center justify-center  cursor-pointer ">
+            {" "}
+            <FaArrowRight onClick={nextSlide} />
+          </div>
         </div>
-        </div>
+      </div>
+      {/* Respose to  fetch Section */}
+
+      <div className="flex ml-[140px]  max-w-[1180px] overflow-hidden  z-20 cursor-pointer">
+        {categries.map((cat, index) => {
+          return (
+            <div
+              className="w-[150px] shrink-0 duration-500"
+              key={index}
+              style={{
+                transform: `translateX(-${slide * 100}%)`,
+                
+              }}
+            >
+              <img src={"http://localhost:5000/images/" + cat.image} alt="" />
+            </div>
+          );
+        })}
+      </div>
+        <hr className="border-[1px] text-gray-200 max-w-[1180px] ml-[160px] my-[2px]"/>
     </>
-  )
+  );
 }
+
+export default Category;

@@ -6,6 +6,8 @@ import { IoPersonOutline } from "react-icons/io5";
 import { LiaBoxOpenSolid } from "react-icons/lia";
 import { FaWindowMaximize } from "react-icons/fa";
 import { TbBriefcase2 } from "react-icons/tb";
+import { CiGps } from "react-icons/ci";
+import { RxCross2 } from "react-icons/rx";
 
 function Header() {
   // Toogle Bar is Created
@@ -54,17 +56,42 @@ function Header() {
         style={{
           opacity: toggle ? 1 : 0,
           visibility: toggle ? "visible" : "hidden",
-          zIndex: toggle?102:-1
+          zIndex: toggle ? 102 : -1,
         }}
         onClick={hideSideMenu}
       >
         <div
-          className="w-[400px] bg-white h-full  position absolute duration-[400ms] z"
+          className="w-[600px] p-[10px] bg-white h-full  position absolute duration-[400ms] z"
           style={{ left: toggle ? "0%" : "-100%" }}
           onClick={(e) => {
             e.stopPropagation();
           }}
-        ></div>
+        >
+          <div className="mt-4 ml-[130px]  p-5 flex flex-col gap-5 max-w-[500px]">
+            
+            <button className="mb-2 self-start">
+              
+              <RxCross2 className="text-2xl" onClick={hideSideMenu} />
+            </button>
+            <input
+              type="text"
+              className="border p-3 border-gray-400 w-full placeholder-gray-500 placeholder:font-medium"
+              placeholder="Search for area, street name..."
+            />
+            <div className="border p-4 cursor-pointer group">
+              
+              <div className="flex items-center gap-2">
+                
+                <CiGps className="text-2xl" />
+                <h1 className="font-bold group-hover:text-orange-500">
+                  
+                  Get current location{" "}
+                </h1>
+              </div>
+              <p className="ml-8 text-gray-400 text-sm">Using GPS</p>
+            </div>
+          </div>
+        </div>
       </div>
       <header className="p-3 shadow-xl sticky top-0 z-[99] bg-white">
         <div className="max-w-[1200px] mx-auto  flex items-center ">
