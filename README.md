@@ -1,7 +1,3 @@
-Sure! Below is a sample README file for your Swiggy clone built with React and Tailwind CSS. You can customize it as per your project's details and features.
-
----
-
 # Swiggy Clone
 
 A Swiggy clone web application built using **React** and **Tailwind CSS**. The app mimics the user interface and functionality of the popular food delivery platform, Swiggy.
