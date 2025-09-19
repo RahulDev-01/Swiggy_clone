@@ -1,4 +1,5 @@
 import React from 'react';
+import { apiUrl } from '../config';
 
 const Start = () => {
   return (
@@ -44,9 +45,10 @@ export default function Card(props) {
       <div className=' group h-[182px] rounded-[15px] overflow-hidden relative'>
         <img
           className=' group-hover:scale-110 duration-200 object-cover w-full h-full'
-          src={'http://localhost:5000/images/' + props.image}
+          src={apiUrl(`/images/${props.image}`)}
           alt=""
         />
+
         <div className='image-overlay absolute w-full h-full top-0 flex items-end p-2 text-[25px] font-bold text-white tracking-tighter'>
           {props.offer}
         </div>
