@@ -1,7 +1,7 @@
 // Centralized API base configuration
 // In production/deployment, set VITE_API_BASE_URL to your deployed API origin, e.g. https://your-api.vercel.app
-// If not set, we default to a '/api' prefix and let Vite devServer proxy handle it locally.
-const RAW_BASE = import.meta?.env?.VITE_API_BASE_URL || "";
+// If not set, we default to the deployed API origin (Option B).
+const RAW_BASE = import.meta?.env?.VITE_API_BASE_URL || "https://swiggy-api-edrs.vercel.app";
 export const API_BASE = RAW_BASE.replace(/\/$/, "");
 
 export const apiUrl = (path) => {
