@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
+import { apiUrl } from "../config";
 
 function Category() {
   const [slide, setSlide] = useState(0);
 
   const fetchCategory = async () => {
-    const response = await fetch("http://localhost:5000/categories");
+    const response = await fetch(apiUrl("/categories"));
     const data = await response.json();
     setCategory(data);
   };
@@ -53,7 +54,7 @@ function Category() {
                 
               }}
             >
-              <img src={"http://localhost:5000/images/" + cat.image} alt="" />
+              <img src={apiUrl(`/images/${cat.image}`)} alt="" />
             </div>
           );
         })}

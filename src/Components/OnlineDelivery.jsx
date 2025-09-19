@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Header from "./Header";
 import Card from "./Card";
+import { apiUrl } from "../config";
 
 function OnlineDelivery() {
 
@@ -28,9 +29,7 @@ function OnlineDelivery() {
 
   const fetchTopRestaurant = async () => {
     try {
-      const response = await fetch(
-        "http://localhost:5000/top-restaurant-chains"
-      );
+      const response = await fetch(apiUrl("/top-restaurant-chains"));
       const apiData = await response.json();
       setData(apiData);
     } catch (error) {

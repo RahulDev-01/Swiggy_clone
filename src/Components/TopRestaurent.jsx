@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import Card from './Card';
+import { apiUrl } from '../config';
 
 function TopRestaurant() {
   const [data, setData] = useState([]);
@@ -8,7 +9,7 @@ function TopRestaurant() {
 
   const fetchTopRestaurant = async () => {
     try {
-      const response = await fetch("http://localhost:5000/top-restaurant-chains");
+      const response = await fetch(apiUrl("/top-restaurant-chains"));
       const apiData = await response.json();
       setData(apiData);
     } catch (error) {
